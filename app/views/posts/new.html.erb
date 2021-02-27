@@ -1,6 +1,8 @@
 <div class="text-center mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
+
+            <h2>Nueva publicación</h2>
         
             <%= form_with(model: @post, local: true) do |f| %>
 
@@ -22,6 +24,8 @@
                     <%= f.submit 'Guardar', class: 'btn btn-primary' %>
                 </div>
             <% end %>
+
+            <%= link_to  "Volver", root_path %>
 
         </div>
     </div>

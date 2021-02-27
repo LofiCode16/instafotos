@@ -4,9 +4,9 @@
     </button>
     <h4 class="alert-heading">Ups! algo salió mal</h4>
     <p>No he podido realizar esta tarea, revisa los siguientes errores: </p>
-        <ul>
+        <ul class="list-group">
             <% errors.each do |error| %>
-                <li><%= error %></li>
+                <li class="list-group-item list-group-item-danger"><%= error %></li>
             <% end %>
         </ul>
     <hr>

@@ -16,4 +16,9 @@
 
 .main-page {
     padding-top: 60px;
+    min-height: 93vh;
+}
+
+footer {
+    height: 64px;
 }
