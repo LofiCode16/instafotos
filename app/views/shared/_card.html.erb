@@ -1,6 +1,7 @@
-<div class="row my-5">
+<div class="row my-3">
     <div class="col-md-6 offset-md-3">
         <div class="card">
+            <%= link_to raw("&#128465"), post, class: 'trash-icon', method: :delete, data: {confirm: 'Quieres borrar esta publicacion?'} %>
             <img src="<%= post.image_url %>" class="card-img-top" alt="photo" width="100">
             <div class="card-body">
                 <p class="card-text"><%= post.content %></p>

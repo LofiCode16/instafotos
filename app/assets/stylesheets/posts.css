@@ -1,0 +1,13 @@
+.trash-icon {
+    z-index: 2;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.trash-icon:hover {
+    text-decoration: none;
+}
