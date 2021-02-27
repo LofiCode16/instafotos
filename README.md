@@ -1,24 +1,57 @@
-# README
+# InstaFotos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta app fue creada principalmente para realizar la nivelación de los estudiantes de la carrera FullStack Rails G38. El proyecto está dividido en 4 avances para 4 días, en los cuales se reforzarán distintos aspectos: 
 
-Things you may want to cover:
+### Día 1:
 
-* Ruby version
+* CRUD manual
 
-* System dependencies
+* Validaciones
 
-* Configuration
+* Manejo de assets, principalmente estilos
 
-* Database creation
+* Configuraciones necesarias para el deploy
 
-* Database initialization
+* Deploy a Heroku
 
-* How to run the test suite
+### Día 2: 
 
-* Services (job queues, cache servers, search engines, etc.)
+* Autenticación con Devise
 
-* Deployment instructions
+* Configuración de atributos extra
 
-* ...
+* Asociación de recursos
+
+* Manipulación de los datos de la sesión actual a traves de helpers
+
+* Limitación de accesos y acciones sobre los recursos
+
+* Deploy a Heroku
+
+### Día 3: 
+
+* Asociaciones recursivas 
+
+* Filtros de búsqueda 
+
+* Paginación
+
+* Panel de administración
+
+* Deploy a Heroku
+
+### Día 4: 
+
+* Creación de API REST
+
+* Manejo de peticiones y respuestas a cada endpoint
+
+* Acceso a cada endpoint usando autenticación manual y Devise
+
+* Deploy a Heroku 
+
+Los avances esperados programados para cada día está en la rama Master con el tag correspondiente. Se realizarán trabajos en equipo para la resolución de los distintos problemas, los cuales una vez solucionados por los estudiantes se expondrán algunas soluciones alternativas.
+
+Se realizarán evaluaciones paulatinas asociadas a cada avance, con el fin de llevar un seguimiento más detallado aún de cada estudiante. Una vez terminado el proyecto, se realizará una evaluación final del resultado de cada estudiante, para el cual se revisará tanto el código creado y respaldado en GitHub como también la App publicada en Heroku.
+
+Para más detalles, puedes contactarme [aquí](mailto:diegopr178@gmail.com).
