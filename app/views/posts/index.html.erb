@@ -1,0 +1,11 @@
+<% if @posts.length < 1 %>
+    <div class="text-center">
+        <h1>No hay posts aún</h1>
+        <%= link_to  "Crear mi primer post", new_post_path %>
+    </div>
+<% else %>
+    <% @posts.each do |post| %>
+        <%= render 'shared/card', post: post %>            
+    <% end %>
+<% end %>
+

@@ -1,0 +1,30 @@
+<div class="text-center mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+        
+            <%= form_with(model: @post, local: true) do |f| %>
+
+                <% if @post.errors.any? %>
+                    <%= render 'shared/errors', errors: @post.errors.full_messages %>
+                <% end %>
+
+                <div class="form-group">
+                    <%= f.label 'url de la imagen' %>
+                    <%= f.text_field :image_url, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label 'descripcion' %>
+                    <%= f.text_area :content, class: 'form-control', rows: 4 %>
+                </div>
+
+                <div>
+                    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+                </div>
+            <% end %>
+
+        </div>
+    </div>
+
+
+</div>

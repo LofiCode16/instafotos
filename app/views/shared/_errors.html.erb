@@ -1,0 +1,14 @@
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="alert-heading">Ups! algo salió mal</h4>
+    <p>No he podido realizar esta tarea, revisa los siguientes errores: </p>
+        <ul>
+            <% errors.each do |error| %>
+                <li><%= error %></li>
+            <% end %>
+        </ul>
+    <hr>
+    <p class="mb-0">Inténtalo otra vez</p>
+</div>
