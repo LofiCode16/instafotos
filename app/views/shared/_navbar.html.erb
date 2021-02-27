@@ -7,6 +7,9 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <%= link_to  "Explorar", root_path(explore: true), class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
                     <%= link_to  "Crear nuevo post", new_post_path, class: 'nav-link' if user_signed_in?%>
                 </li>
                 <li class="nav-item dropdown">

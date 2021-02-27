@@ -1,7 +1,13 @@
 class FriendsController < ApplicationController
   def create
     @friend = User.find(params[:friend_id])
-    current_user.friends << @friend
+    
+    @friendship = Friend.new(
+                user_id: current_user.id,
+                friend_id: @friend.id
+              )
+
+    current_user.friends << @friendship
 
     redirect_to root_path, notice: "Ahora estás siguiendo a #{@friend.name}"
   end

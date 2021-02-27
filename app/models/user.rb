@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def is_friend_of(user)
-    self.friends.pluck(:user_id).include?(user.id) ? true : false
+    self.friends.pluck(:friend_id).include?(user.id) ? true : false
 end
 
 end

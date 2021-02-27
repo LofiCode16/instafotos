@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.posts_for_me(current_user.friends)
+    @posts = Post.all if params[:explore]
   end
 
   def new
