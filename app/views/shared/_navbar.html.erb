@@ -11,11 +11,16 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tu cuenta
+                        <%= user_signed_in? ? "Bienvenido #{current_user.name}!" : 'Tu cuenta' %>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Iniciar sesion</a>
-                        <a class="dropdown-item" href="#">Registrarse</a>
+                        <% if user_signed_in? %>
+                            <%= link_to  "Editar perfil", edit_user_registration_path, class:"dropdown-item" %>
+                            <%= link_to  "Cerrar sesión", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+                        <% else %>
+                            <%= link_to  "Iniciar sesión", new_user_session_path, class:"dropdown-item" %>
+                            <%= link_to  "Registrarse", new_user_registration_path, class:"dropdown-item" %>
+                        <% end %>
                     </div>
                 </li>
             </ul>
