@@ -1,9 +1,15 @@
 <div class="row my-3">
     <div class="col-md-6 offset-md-3">
         <div class="card">
-            <%= link_to raw("&#128465"), post, class: 'trash-icon', method: :delete, data: {confirm: 'Quieres borrar esta publicacion?'} %>
+            
+            <% if post.user == current_user %>
+                <%= link_to raw("&#128465"), post, class: 'trash-icon', method: :delete, data: {confirm: 'Quieres borrar esta publicacion?'} %>
+            <% end %>
+
             <img src="<%= post.image_url %>" class="card-img-top" alt="photo" width="100">
+
             <div class="card-body">
+                <h5 class="card-title"><%= post.user %></h5>
                 <p class="card-text"><%= post.content %></p>
             </div>
         </div>
