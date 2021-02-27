@@ -8,9 +8,6 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :friends, dependent: :destroy
 
-  def to_s
-    self.name
-  end
 
   def friend_self
     Friend.create!(
@@ -18,5 +15,9 @@ class User < ApplicationRecord
       friend_id: self.id
     )
   end
+
+  def is_friend_of(user)
+    self.friends.pluck(:user_id).include?(user.id) ? true : false
+end
 
 end
