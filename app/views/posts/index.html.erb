@@ -28,7 +28,36 @@
         <div class="col-md-6">
 
             <% @posts.each do |post| %>
-                <%= render 'shared/card', post: post %>            
+                <% if post.repost_id.nil? %>
+                    <%= render 'shared/card', post: post %>            
+                <% else %>
+
+                    <div class="card">
+
+                        <h5 class="card-title pt-2 pl-2"><%= post.user.name %>
+                            <span class="follow">
+                                <% if current_user.is_friend_of(post.user) %>
+                                    <%= link_to  "dejar de seguir", destroy_friend_path(post.user), method: :delete unless post.user == current_user %>
+                                <% else %>
+                                    <%= link_to "seguir", new_friend_path(post.user), method: :post %>
+                                <% end %>
+                            </span>
+                        </h5>
+
+                            <% if post.user == current_user %>
+                                <%= link_to raw("&#128465"), post, class: 'trash-icon', method: :delete, data: {confirm: 'Quieres borrar esta publicacion?'} %>
+                            <% end %>
+
+                        <div class="card-body">
+                            <p class="card-text"><%= post.content %></p>
+                        </div>
+
+                        <div class="ml-5 mb-2 mr-2">
+                            <%= render 'shared/card', post: post.repost %> 
+                        </div>
+
+                    </div>
+                <% end %>
             <% end %>
 
         </div>    

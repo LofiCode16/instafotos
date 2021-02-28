@@ -1,0 +1,30 @@
+<div class="text-center mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <h2>Compartir publicación</h2>
+        
+            <%= form_with(model: @repost, url: repost_path, local: true) do |f| %>
+
+                <%= f.hidden_field :repost_id, value: @post.id %>
+
+                <% if @post.errors.any? %>
+                    <%= render 'shared/errors', errors: @repost.errors.full_messages %>
+                <% end %>
+
+                <div class="form-group">
+                    <%= f.label 'descripcion' %>
+                    <%= f.text_area :content, class: 'form-control', rows: 4 %>
+                </div>
+
+                <%= render  "shared/card", post: @post %>
+
+                <div>
+                    <%= f.submit 'Guardar', class: 'btn btn-cream' %>
+                </div>
+            <% end %>
+
+        </div>
+    </div>
+</div>
+
