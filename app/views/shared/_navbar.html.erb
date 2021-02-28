@@ -7,6 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0" method="get" action="<%= root_path %>">
+                        <input class="form-control mr-sm-2" name="q" type="search" placeholder="Escribe algo..." aria-label="Search">
+                        <button class="btn btn-cream my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </li>
+
+                <li class="nav-item">
                     <%= link_to  "Explorar", root_path(explore: true), class: 'nav-link' %>
                 </li>
                 <li class="nav-item dropdown">

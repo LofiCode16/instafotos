@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @posts = Post.all if params[:explore]
     @posts = Post.where(user_id: params[:friend_id]) if params[:friend_id]
     @posts = Post.where(user_id: params[:id]) if params[:id]
+    @posts = Post.where('content LIKE ?', "%#{params[:q]}%") if params[:q]
     @post = Post.new
   end
 
