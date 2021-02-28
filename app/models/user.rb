@@ -18,6 +18,17 @@ class User < ApplicationRecord
 
   def is_friend_of(user)
     self.friends.pluck(:friend_id).include?(user.id) ? true : false
-end
+  end
 
+  def all_friends
+    @friend_ids = self.friends.pluck(:friend_id)
+
+    @friends = []
+
+    @friend_ids.each do |friend_id|
+      @friends << User.find(friend_id)
+    end
+
+    return @friends
+  end
 end

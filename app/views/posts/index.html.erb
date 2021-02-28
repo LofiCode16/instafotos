@@ -1,11 +1,30 @@
+<% unless params[:explore] %>
+    <%= render 'new', post: @post %>
+<% end %>
+
 <% if @posts.length < 1 %>
+
     <div class="text-center">
         <h1>No hay publicaciones aún</h1>
         <%= link_to  "Sé el primero!", new_post_path %>
     </div>
+    
 <% else %>
-    <% @posts.each do |post| %>
-        <%= render 'shared/card', post: post %>            
-    <% end %>
+    
+    <div class="row my-3">
+
+        <div class="col-md-3">
+            <%= render 'shared/friends' %>
+        </div>
+
+        <div class="col-md-6">
+
+            <% @posts.each do |post| %>
+                <%= render 'shared/card', post: post %>            
+            <% end %>
+
+        </div>    
+    </div>
+
 <% end %>
 

@@ -2,9 +2,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.posts_for_me(current_user.friends)
     @posts = Post.all if params[:explore]
-  end
-
-  def new
+    @posts = Post.where(user_id: params[:friend_id]) if params[:friend_id]
+    @posts = Post.where(user_id: params[:user_id]) if params[:user_id]
     @post = Post.new
   end
 

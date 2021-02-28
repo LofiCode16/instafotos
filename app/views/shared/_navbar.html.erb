@@ -9,9 +9,6 @@
                 <li class="nav-item">
                     <%= link_to  "Explorar", root_path(explore: true), class: 'nav-link' %>
                 </li>
-                <li class="nav-item">
-                    <%= link_to  "Crear nuevo post", new_post_path, class: 'nav-link' if user_signed_in?%>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <%= user_signed_in? ? "Bienvenido #{current_user.name}!" : 'Tu cuenta' %>

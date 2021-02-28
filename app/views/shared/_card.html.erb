@@ -1,26 +1,22 @@
-<div class="row my-3">
-    <div class="col-md-6 offset-md-3">
-        <div class="card">
-            
-            <h5 class="card-title pt-2 pl-2"><%= post.user.name %>
-                <span class="follow">
-                    <% if current_user.is_friend_of(post.user) %>
-                        <%= link_to  "dejar de seguir", destroy_friend_path(post.user), method: :delete unless post.user == current_user %>
-                    <% else %>
-                        <%= link_to "seguir", new_friend_path(post.user), method: :post %>
-                    <% end %>
-                </span>
-            </h5>
-
-            <% if post.user == current_user %>
-                <%= link_to raw("&#128465"), post, class: 'trash-icon', method: :delete, data: {confirm: 'Quieres borrar esta publicacion?'} %>
+<div class="card my-2">
+    
+    <h5 class="card-title pt-2 pl-2"><%= post.user.name %>
+        <span class="follow">
+            <% if current_user.is_friend_of(post.user) %>
+                <%= link_to  "dejar de seguir", destroy_friend_path(post.user), method: :delete unless post.user == current_user %>
+            <% else %>
+                <%= link_to "seguir", new_friend_path(post.user), method: :post %>
             <% end %>
+        </span>
+    </h5>
 
-            <img src="<%= post.image_url %>" class="card-img-top" alt="photo" width="100">
+    <% if post.user == current_user %>
+        <%= link_to raw("&#128465"), post, class: 'trash-icon', method: :delete, data: {confirm: 'Quieres borrar esta publicacion?'} %>
+    <% end %>
 
-            <div class="card-body">
-                <p class="card-text"><%= post.content %></p>
-            </div>
-        </div>
-    </div>    
+    <img src="<%= post.image_url %>" class="card-img-top" alt="photo" width="100">
+
+    <div class="card-body">
+        <p class="card-text"><%= post.content %></p>
+    </div>
 </div>
