@@ -4,9 +4,17 @@
 
 <% if @posts.length < 1 %>
 
-    <div class="text-center mt-5">
-        <h1>No hay publicaciones aún</h1>
-        <p>Sé el primero!</p>
+    <div class="row">
+        <div class="col-md-3">
+            <%= render 'shared/friends' %>
+        </div>
+
+        <div class="col-md-6">
+            <div class="text-center mt-5">
+                <h1>No hay publicaciones aún</h1>
+                <p>Sé el primero!</p>
+            </div>        
+        </div>
     </div>
     
 <% else %>
