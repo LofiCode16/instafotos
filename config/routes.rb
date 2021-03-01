@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts, only: %i[index create destroy]
 
+  get 'api/posts', to: 'api/api#index'
+  get 'api/explore', to: 'api/api#explore'
+  get 'api/date/:date_1/:date_2', to: 'api/api#date'
+  post 'api/posts/create', to: 'api/api#create'
+
   post 'repost', to: 'reposts#create', as: 'repost'
   get 'reposts/:id/new', to: 'reposts#new', as: 'new_repost'
 
