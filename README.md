@@ -60,13 +60,13 @@ Y los avances serán publicados en el siguiente link:
 
 Para acceder a la API es necesario utilizar la misma url, además de los siguientes endpoints: 
 
-* api/posts -> retorna todos los posts del usuario (requiere autenticación con cuenta existente en la app)
+* GET api/posts -> retorna todos los posts del usuario (requiere autenticación con cuenta existente en la app)
 
-* api/explore -> retorna todos los posts existentes
+* GET api/explore -> retorna todos los posts existentes
 
-* api/date/:date_1/:date_2 -> retorna todos los posts dentro del rango de fechas especificado (usar formato año-mes-dia)
+* GET api/date/:date_1/:date_2 -> retorna todos los posts dentro del rango de fechas especificado (usar formato año-mes-dia)
 
-* api/posts/create -> permite crear un post (requiere autenticación con cuenta existente en la app, atributos permitidos: image_url, content)
+* POST api/posts/create -> permite crear un post (requiere autenticación con cuenta existente en la app, atributos permitidos: image_url, content)
 
 Los avances esperados programados para cada día está en la rama Master con el tag correspondiente. Se realizarán trabajos en equipo para la resolución de los distintos problemas, los cuales una vez solucionados por los estudiantes se expondrán algunas soluciones alternativas.
 
