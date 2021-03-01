@@ -1,8 +1,6 @@
 <div class="text-center mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-
-            <h2>Nueva publicación</h2>
         
             <%= form_with(model: @post, local: true) do |f| %>
 
@@ -11,17 +9,15 @@
                 <% end %>
 
                 <div class="form-group">
-                    <%= f.label 'url de la imagen' %>
-                    <%= f.text_field :image_url, class: 'form-control' %>
+                    <%= f.text_field :image_url, class: 'form-control', placeholder: 'url de la imagen' %>
                 </div>
 
                 <div class="form-group">
-                    <%= f.label 'descripcion' %>
-                    <%= f.text_area :content, class: 'form-control', rows: 4 %>
+                    <%= f.text_area :content, class: 'form-control', rows: 3, placeholder: 'descripcion' %>
                 </div>
 
                 <div>
-                    <%= f.submit 'Guardar', class: 'btn btn-cream' %>
+                    <%= f.submit 'Publicar', class: 'btn btn-cream' %>
                 </div>
             <% end %>
 
