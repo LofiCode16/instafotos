@@ -1,10 +1,9 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.posts_for_me(current_user.friends).page(params[:page])
-    @posts = Post.all.order(created_at: :desc).page(params[:page]) if params[:explore]
-    @posts = Post.where(user_id: params[:friend_id]).order(created_at: :desc).page(params[:page]) if params[:friend_id]
-    @posts = Post.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]) if params[:id]
-    @posts = Post.where('content LIKE ?', "%#{params[:q]}%").order(created_at: :desc).page(params[:page]) if params[:q]
+    @posts = Post.explore.page(params[:page]) if params[:explore]
+    @posts = Post.friend_posts(params[:id]).page(params[:page]) if params[:id]
+    @posts = Post.search(params[:q]).page(params[:page]) if params[:q]
     @post = Post.new
   end
 
