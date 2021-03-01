@@ -18,6 +18,6 @@
 
     <div class="card-body">
         <p class="card-text"><%= post.content %></p>
-        <%= link_to  "Compartir", new_repost_path(post.id) %>
+        <%= link_to  "Compartir", new_repost_path(post.id) unless current_page?(new_repost_path(post.id))%>
     </div>
 </div>

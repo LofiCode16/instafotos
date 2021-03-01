@@ -7,6 +7,7 @@
             <%= form_with(model: @repost, url: repost_path, local: true) do |f| %>
 
                 <%= f.hidden_field :repost_id, value: @post.id %>
+                <%= f.hidden_field :repost, value: true %>
 
                 <% if @post.errors.any? %>
                     <%= render 'shared/errors', errors: @repost.errors.full_messages %>
