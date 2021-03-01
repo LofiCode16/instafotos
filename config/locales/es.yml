@@ -42,6 +42,12 @@ es:
       active_admin/comment:
         one: "Comentario"
         other: "Comentarios"
+    errors: 
+      models: 
+        user:
+          attributes: 
+            current_password:
+              blank: 'es necesaria para guardar los cambios'
   active_admin:
     dashboard: "Inicio"
     dashboard_welcome:
