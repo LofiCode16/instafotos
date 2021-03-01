@@ -1,5 +1,5 @@
 class Api::ApiController < ActionController::API
-    before_action :authenticate_user!, only: [:index, :create]
+    before_action :authenticate_user!
 
     def index
         @posts = Post.posts_for_me(current_user.friends)
