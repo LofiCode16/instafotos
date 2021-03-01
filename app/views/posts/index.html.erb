@@ -1,5 +1,7 @@
 <% unless params[:explore] %>
     <%= render 'new', post: @post %>
+<% else %>
+    <h2 class="text-center">Explorar</h2>
 <% end %>
 
 <% if @posts.length < 1 %>
@@ -14,8 +16,6 @@
                 <h1>No hay publicaciones aún</h1>
                 <p>Sé el primero!</p>
             </div>    
-
-            <%= render  "new", post: @post %>    
         </div>
     </div>
     
