@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     @posts = Post.posts_for_me(current_user.friends).page(params[:page])
     @posts = Post.explore.page(params[:page]) if params[:explore]
     @posts = Post.friend_posts(params[:id]).page(params[:page]) if params[:id]
-    @posts = Post.search(params[:q]).page(params[:page]) if params[:q]
+    @posts = Post.search_post(params[:q]).page(params[:page]) if params[:q]
     @post = Post.new
   end
 
