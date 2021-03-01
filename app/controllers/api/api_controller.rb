@@ -1,6 +1,4 @@
 class Api::ApiController < ActionController::API
-    include ActionController::MimeResponds
-
     before_action :authenticate_user!, only: [:index, :create]
 
     def index
