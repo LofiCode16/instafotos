@@ -50,6 +50,14 @@ Esta app fue creada principalmente para realizar la nivelación de los estudiant
 
 * Deploy a Heroku 
 
+El modelo utilizado para este proyecto es el siguiente: 
+
+![alt text](./erd.png "Modelo Físico")
+
+Y los avances serán publicados en el siguiente link: 
+
+[https://instafotosapp.herokuapp.com](https://instafotosapp.herokuapp.com/)
+
 Los avances esperados programados para cada día está en la rama Master con el tag correspondiente. Se realizarán trabajos en equipo para la resolución de los distintos problemas, los cuales una vez solucionados por los estudiantes se expondrán algunas soluciones alternativas.
 
 Se realizarán evaluaciones paulatinas asociadas a cada avance, con el fin de llevar un seguimiento más detallado aún de cada estudiante. Una vez terminado el proyecto, se realizará una evaluación final del resultado de cada estudiante, para el cual se revisará tanto el código creado y respaldado en GitHub como también la App publicada en Heroku.
