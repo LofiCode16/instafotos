@@ -14,7 +14,8 @@
         <%= link_to raw("&#128465"), post, class: 'trash-icon', method: :delete, data: {confirm: 'Quieres borrar esta publicacion?'} %>
     <% end %>
 
-    <img src="<%= post.image_url %>" class="card-img-top" alt="photo" width="100">
+    <!-- <img src="<%= post.image_url %>" class="card-img-top" alt="photo" width="100"> -->
+    <%= image_tag post.image_url, class: 'card-img-top', alt: 'photo', width: '100' %>
 
     <div class="card-body">
         <p class="card-text"><%= post.content %></p>

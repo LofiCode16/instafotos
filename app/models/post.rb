@@ -1,9 +1,10 @@
 class Post < ApplicationRecord
     attr_accessor :repost
 
-    validates :image_url, presence: true, unless: :repost
+    #validates :image_url, presence: true, unless: :repost
     belongs_to :user
 
+    has_one_attached :image_url
     has_many :reposts, class_name: "Post", foreign_key: "repost_id", dependent: :destroy
 
     scope :posts_for_me, ->(friends) { where(user_id: friends.map {|friend| friend.friend_id}).order(created_at: :desc).includes(:user) }
@@ -20,3 +21,4 @@ class Post < ApplicationRecord
         Post.find_by(repost_id: self.id) ? true : false
     end
 end
+
